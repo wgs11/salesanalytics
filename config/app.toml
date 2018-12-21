@@ -1,5 +1,0 @@
-[production]
-user = "postgres"
-dbname = "sales_analytics"
-password = "wrong1"
-
