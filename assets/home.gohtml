@@ -1,0 +1,38 @@
+{{define "home"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/custom.css" />
+    <title>Sales Analytics</title>
+
+</head>
+<body>
+<div class="banner"></div>
+<div class="sidenav">
+    <a href="/">Home</a>
+</div>
+<form action="/day" method="POST" enctype="multipart/form-data">
+    <input type="file" name="q" id="q" multiple="multiple">
+    <input type="submit">
+</form>
+<br>
+<form action="/day" method="POST">
+    <label for="start_date">Start Date </label>
+    <input type="text" name="start_date" id="start_date">
+    <label for="end_date">End Date </label>
+    <input type="text" name="end_date" id="end_date">
+    <label for="estimate">Sales Estimate </label>
+    <input type="text" name="estimate" id="estimate">
+    <input type="submit">
+</form>
+<form action="/employee" method="POST">
+    <label for="id">ID Number </label>
+    <input type="text" name="id" id="id">
+    <input type="submit">
+</form>
+<form action="/store/Wexford" method="get">
+    <button type="submit">Wexford</button>
+</form>
+</body>
+</html>
+        {{end}}

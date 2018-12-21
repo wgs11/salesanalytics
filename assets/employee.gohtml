@@ -1,0 +1,12 @@
+{{define "employee"}}
+<html lang="en">
+{{template "header"}}
+<div class="banner"></div>
+{{template "navbar"}}
+
+<div>{{.Person.FN}}</div>
+<div>{{.Person.LN}}</div>
+<div>{{.Person.Role}}</div>
+{{template "footer"}}
+{{end}}
+

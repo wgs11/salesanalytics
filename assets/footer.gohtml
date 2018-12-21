@@ -1,0 +1,37 @@
+{{define "footer"}}
+<script>
+    function myFunction() {
+    var table = document.getElementById("doctable")
+        for (var i = 2, row; row = table.rows[i]; i++){
+            var x = row.insertCell(-1);
+            number = parseFloat(row.cells[1].innerHTML.substring(1))
+            if (number < 100) {
+                x.style.backgroundColor = "violet";
+                x.innerHTML = "1";
+            }
+            else if (number < 200) {
+                x.style.backgroundColor = "indigo";
+                x.innerHTML = "2";
+            }
+            else if (number < 300) {
+                x.style.backgroundColor = "blue";
+                x.innerHTML = "3";
+            }
+            else if (number < 400) {
+                x.style.backgroundColor = "green";
+                x.innerHTML = "4";
+            }
+            else if (number < 500) {
+                x.style.backgroundColor = "yellow";
+                x.innerHTML = "5"
+            }
+            else {
+                x.style.backgroundColor = "orange";
+                x.innerHTML = "6"
+            }
+        }
+    }
+</script>
+</body>
+</html>
+{{end}}

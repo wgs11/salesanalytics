@@ -1,0 +1,56 @@
+
+
+.banner {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Graeter%27s_Ice_Cream_Shield_Logo.jpg");
+    height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    border-bottom: solid;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 120px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 290px 8px 6px 18px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+body{
+    margin: 0;
+    padding-left: 120px;
+    padding-right: 10px;
+}
+
+td {
+    transition: all .2s ease-in-out;
+    min-width: 40px;
+    border: 1px solid #000000;
+
+}
+
+td:hover { transform: scale(1.1)}
+
+#doctable {
+    border: groove;
+}
+
+#tablecontainer {
+    padding-top: 5%;
+    padding-left: 2%;
+}
