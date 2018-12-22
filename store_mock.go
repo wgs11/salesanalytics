@@ -32,12 +32,17 @@ func (m *MockStore) GetPlace(location string)(*Place, error) {
 }
 
 func (m *MockStore) CreateUser(creds *Credentials) error {
-	rets :=m.Called(creds)
+	rets := m.Called(creds)
 	return rets.Error(0)
 }
 func (m *MockStore) CheckUser(creds *Credentials) error {
 	rets := m.Called(creds)
 	return rets.Error(0)
+}
+
+func (m *MockStore) GetReviews(location string) ([]*Review, error) {
+	rets := m.Called(location)
+	return rets.Get(0).([]*Review), rets.Error(1)
 }
 func InitMockStore() *MockStore {
 	s := new(MockStore)

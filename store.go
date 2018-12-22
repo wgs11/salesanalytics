@@ -14,6 +14,7 @@ type Store interface {
 	GetPlace(location string) (*Place, error)
 	CreateUser(creds *Credentials) error
 	CheckUser(creds *Credentials) error
+	GetReviews(location string) ([]*Review, error)
 }
 
 
