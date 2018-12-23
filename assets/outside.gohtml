@@ -1,0 +1,10 @@
+{{define "outside"}}
+<tr class="question"><th colspan="2">Outside</th><th colspan="2">Employees / Systems</th></tr>
+<tr class="question"><td class="question"> Is the parking lot clean?</td><td class="answer">{{index .Outside 0}}</td><td class="question">Is the team wearing clean uniforms?</td><td class="answer">{{index .Emp_sys 0}}</td></tr>
+<tr class="question"><td class="question"> Is the patio & furniture clean?</td><td class="answer">{{index .Outside 1}}</td><td class="question"> Are their uniforms in good condition?</td><td class="answer">{{index .Emp_sys 1}}</td></tr>
+<tr class="question"><td class="question"> Are the outdoor lights working ?</td><td class="answer">{{index .Outside 2}}</td><td class="question"> Are aprons clean?</td><td class="answer">{{index .Emp_sys 2}}</td></tr>
+<tr class="question"><td class="question"> Are weeds pulled & landscaping in good condition? </td><td class="answer">{{index .Outside 3}}</td><td class="question"> Do they have on the proper slip-resistant shoes?</td><td class="answer">{{index .Emp_sys 3}}</td></tr>
+<tr class="question"><td class="question"> Is the area around the dumpster clean?</td><td class="answer">{{index .Outside 4}}</td><td class="question"> Is hair properly restrained?</td><td class="answer">{{index .Emp_sys 4}}</td></tr>
+<tr class="question"><td class="question"> Are the sidewalk clean ?</td><td class="answer">{{index .Outside 5}}</td><td class="question">Is the store awareness binder being completed daily?</td><td class="answer">{{index .Emp_sys 5}}</td></tr>
+<tr class="question"><td class="question"> Are the exteriors of the windows and window ledges clean?</td><td class="answer">{{index .Outside 6}}</td><td class="question">Is the scoop weighing system in place and being used daily?</td><td class="answer">{{index .Emp_sys 6}}</td></tr>
+        {{end}}

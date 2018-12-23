@@ -37,14 +37,29 @@ body{
     padding-right: 10px;
 }
 
-td {
+#doctable td {
     transition: all .2s ease-in-out;
     min-width: 40px;
     border: 1px solid #000000;
 
 }
+#doctable td:hover { transform: scale(1.1)}
+#top td {
+    border: 1px solid #000000;
+}
+#reviewtable td{
+    border: 1px solid #000000;
+}
+tr.question{
+    width: 50%;
+}
+td.question {
+    width: 40%;
 
-td:hover { transform: scale(1.1)}
+}
+td.answer {
+    width: 10%;
+}
 
 #doctable {
     border: groove;
@@ -53,4 +68,10 @@ td:hover { transform: scale(1.1)}
 #tablecontainer {
     padding-top: 5%;
     padding-left: 2%;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
 }

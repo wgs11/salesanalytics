@@ -1,0 +1,17 @@
+{{define "review"}}
+<html lang="en">
+{{template "header"}}
+<div class="banner"></div>
+{{template "navbar"}}
+<table id="top"><tr><td>Outside</td><td>Employees/Systems</td><td>Eating Area</td><td>Merch/Displays</td><td>Fountain</td><td>Inventory</td><td>Backroom/Office</td><td>Restrooms</td></tr></table>
+        {{range .}}
+        <button class="collapsible">Expand</button>
+        <div class="content" id="reviewtablecontainer">
+
+        {{template "reviewtable" .}}
+        </div>
+                {{end}}
+
+{{template "footer"}}
+{{end}}
+
