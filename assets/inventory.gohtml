@@ -1,0 +1,16 @@
+{{define "inventory"}}
+<tr class="question"><th colspan="2">Inventory</th><th colspan="2">Restrooms</th></tr>
+<tr class="question"><td class="question"> Is the ice cream properly rotated?</td><td class="answer">{{index .Inventory 0}}</td><td class="question">  Are the floors clean?</td><td class="answer">{{index .Restrooms 0}}</td></tr>
+<tr class="question"><td class="question"> Is the ice cream scraped well?</td><td class="answer">{{index .Inventory 1}}</td><td class="question">  Are the walls clean?</td><td class="answer">{{index .Restrooms 1}}</td></tr>
+<tr class="question"><td class="question"> Is the candy properly rotated?</td><td class="answer">{{index .Inventory 2}}</td><td class="question">  Are the light fixtures clean?</td><td class="answer">{{index .Restrooms 2}}</td></tr>
+<tr class="question"><td class="question"> Is the candy all Julian dated?</td><td class="answer">{{index .Inventory 3}}</td><td class="question"> Are all lights in working condition ?</td><td class="answer">{{index .Restrooms 3}}</td></tr>
+<tr class="question"><td class="question"> Are the dates good on dairy products?</td><td class="answer">{{index .Inventory 4}}</td><td class="question"> Are the vents/fans clean and dust free?</td><td class="answer">{{index .Restrooms 4}}</td></tr>
+<tr class="question"><td class="question"> Proper amount of cones for resale displayed? </td><td class="answer">{{index .Inventory 5}}</td><td class="question"> Is the toilet clean (inside/under lid/base/handle)?</td><td class="answer">{{index .Restrooms 5}}</td></tr>
+<tr class="question"><td class="question"> Outdated items have been pulled from shelves?</td><td class="answer">{{index .Inventory 6}}</td><td class="question"> Is the urinal clean (inside/underneath/handle)?</td><td class="answer">{{index .Restrooms 6}}</td></tr>
+<tr class="question"><td class="question"> Proper amount of bananas displayed ?</td><td class="answer">{{index .Inventory 7}}</td><td class="question"> Is the sink clean (inside/underside/pipes/handles)?</td><td class="answer">{{index .Restrooms 7}}</td></tr>
+<tr class="question"><td class="question"> Is the order level appropriate for the time of year?</td><td class="answer">{{index .Inventory 8}}</td><td class="question"> Are the paper towel dispensers stocked and clean?</td><td class="answer">{{index .Restrooms 8}}</td></tr>
+<tr class="question"><td class="question"> Are seasonal products stocked well?</td><td class="answer">{{index .Inventory 9}}</td><td class="question"> Are the soap dispensers stocked and clean?</td><td class="answer">{{index .Restrooms 9}}</td></tr>
+<tr class="question"><td class="question"> Correct amount of paper products in store?</td><td class="answer">{{index .Inventory 10}}</td><td class="question"> Are the air fresheners working?</td><td class="answer">{{index .Restrooms 10}}</td></tr>
+<tr class="question"><td class="question"> Correct amount of chemicals in the store?</td><td class="answer">{{index .Inventory 11}}</td><td class="question"> Is the changing table clean ? </td><td class="answer">{{index .Restrooms 11}}</td></tr>
+<tr class="question"><td class="question"> Is there a limited amount of store bought chemicals? </td><td class="answer">{{index .Inventory 12}}</td>
+{{end}}
