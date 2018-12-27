@@ -10,10 +10,29 @@ import (
 	"github.com/spf13/viper"
 	"html/template"
 	"net/http"
+	"strconv"
 )
+var fmap = template.FuncMap {
+	"countStuff": countStuff,
+	"stringify": stringify}
 
-var templates = template.Must(template.ParseGlob("assets/*.gohtml"))
+var templates = template.Must(template.New("").Funcs(fmap).ParseGlob("assets/*.gohtml"))
 var cache = sessions.NewCookieStore(securecookie.GenerateRandomKey(32))
+
+
+func countStuff(numbers []uint8) int{
+	total := 0
+	for _, element := range numbers {
+		total = total + int(element)
+	}
+	return total - (48 * len(numbers))
+}
+
+func stringify(number int) string {
+	return strconv.Itoa(number)
+}
+
+
 func newRouter() *mux.Router {
 	r := mux.NewRouter()
 	staticFileDirectory := http.Dir("./assets/")
@@ -27,10 +46,13 @@ func newRouter() *mux.Router {
 	r.HandleFunc("/employee", getEmployeeHandler)
 	r.HandleFunc("/store/{location}", getPlaceHandler).Methods("GET")
 	r.HandleFunc("/stores/{location}/reviews", getReviews)
+	r.HandleFunc("/stores/{location}/reviews/{date}", getReview)
 
 
 	return r
 }
+
+
 
 func main() {
 

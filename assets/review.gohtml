@@ -3,15 +3,17 @@
 {{template "header"}}
 <div class="banner"></div>
 {{template "navbar"}}
-<table id="top"><tr><td>Outside</td><td>Employees/Systems</td><td>Eating Area</td><td>Merch/Displays</td><td>Fountain</td><td>Inventory</td><td>Backroom/Office</td><td>Restrooms</td></tr></table>
-        {{range .}}
-        <button class="collapsible">Expand</button>
-        <div class="content" id="reviewtablecontainer">
+<table id="top"><tr><td>Date</td><td>Outside</td><td>Employees/Systems</td><td>Eating Area</td><td>Merch/Displays</td><td>Fountain</td><td>Inventory</td><td>Backroom/Office</td><td>Restrooms</td></tr>
 
-        {{template "reviewtable" .}}
-        </div>
+
+{{range .}}
+                <tr>
+                    <td><a href= "/stores/{{.Store_id}}/reviews/{{.Day}}">{{.Day}}</a></td><td>{{.Outside | countStuff}}</td> <td>{{.Emp_sys | countStuff}}</td> <td>{{.Eating | countStuff}}</td> <td>{{.Merch | countStuff}}</td> <td>{{.Fountain | countStuff}}</td> <td>{{.Inventory | countStuff}}</td> <td>{{.Backroom | countStuff}}</td> <td>{{.Restrooms | countStuff}}</td>
+                </tr>
+
+
                 {{end}}
-
+</table>
 {{template "footer"}}
 {{end}}
 

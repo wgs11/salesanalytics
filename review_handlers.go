@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 )
 
 type Review struct {
-	day string `json: "date", db:"day"`
-	store_id int `json: "store_id", db:"store_id"`
+	Day string `json: "date", db:"day"`
+	Store_id int `json: "store_id", db:"store_id"`
 	Outside []uint8 `json: "outside", db:"outside"`
 	Emp_sys []uint8 `json: "emp_sys", db:"emp_sys"`
 	Eating []uint8 `json: "eating", db:"eating"`
@@ -22,9 +23,25 @@ type Review struct {
 }
 
 
+func getReview(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	review, err := store.GetReview(vars["location"], vars["date"])
+	if err != nil {
+		fmt.Println(fmt.Errorf("Error: %v", err))
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	reviewobj := (*review)
+	err = templates.ExecuteTemplate(w, "reviewtable", reviewobj)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 
 func getReviews(w http.ResponseWriter, r *http.Request) {
-	reviews, err := store.GetReviews("Wexford")
+	vars := mux.Vars(r)
+
+	reviews, err := store.GetReviews(vars["location"])
 	if err != nil {
 		fmt.Println(fmt.Errorf("Error: %v", err))
 		w.WriteHeader(http.StatusInternalServerError)
@@ -34,7 +51,6 @@ func getReviews(w http.ResponseWriter, r *http.Request) {
 	for _,element := range reviews {
 		reviewblock = append(reviewblock, (*element))
 	}
-	fmt.Println(reviewblock[0])
 	err = templates.ExecuteTemplate(w, "review", reviewblock)
 	if err != nil {
 		log.Fatal(err)

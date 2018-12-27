@@ -1,7 +1,9 @@
 {{define "reviewtable"}}
-
-<table id="reviewtable">
-
+<html lang="en">
+{{template "header"}}
+<div class="banner"></div>
+{{template "navbar"}}
+<table id="top">
     {{template "outside" .}}
         {{template "eating" .}}
 
@@ -37,4 +39,5 @@
     <tr><td> Are all lights in working condition ?</td></tr>
 
 </table>
+{{template "footer"}}
         {{end}}

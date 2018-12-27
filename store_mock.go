@@ -44,6 +44,12 @@ func (m *MockStore) GetReviews(location string) ([]*Review, error) {
 	rets := m.Called(location)
 	return rets.Get(0).([]*Review), rets.Error(1)
 }
+
+func (m *MockStore) GetReview(location string, date string) (*Review, error) {
+	rets := m.Called(location, date)
+	return rets.Get(0).(*Review), rets.Error(1)
+}
+
 func InitMockStore() *MockStore {
 	s := new(MockStore)
 	store = s

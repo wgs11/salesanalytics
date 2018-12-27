@@ -47,6 +47,9 @@ body{
 #top td {
     border: 1px solid #000000;
 }
+#reviewtable {
+    border: 1px solid #000000;
+}
 #reviewtable td{
     border: 1px solid #000000;
 }
