@@ -44,8 +44,10 @@ body{
 
 }
 #doctable td:hover { transform: scale(1.1)}
-#top td {
-    border: 1px solid #000000;
+
+#top td{
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 #reviewtable {
     border: 1px solid #000000;
@@ -59,11 +61,21 @@ tr.question{
 td.question {
     width: 40%;
 
+
 }
 td.answer {
     width: 5%;
 }
-
+th.rotate {
+    height: 140px;
+    white-space: nowrap;
+}
+th.rotate > div {
+    transform:
+        translate(0px, 51px)
+        rotate(315deg);
+    width: 30px;
+}
 #doctable {
     border: groove;
 }
@@ -78,3 +90,5 @@ td.answer {
     display: none;
     overflow: hidden;
 }
+
+

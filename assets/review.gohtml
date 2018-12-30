@@ -3,10 +3,11 @@
 {{template "header"}}
 <div class="banner"></div>
 {{template "navbar"}}
-<table id="top"><tr><td>Date</td><td>Outside</td><td>Employees/Systems</td><td>Eating Area</td><td>Merch/Displays</td><td>Fountain</td><td>Inventory</td><td>Backroom/Office</td><td>Restrooms</td></tr>
-
+<table id="top">
+    <th class="rotate"><div><span>Date</span></div></th><th class="rotate"><div><span>Outside</span></div></th><th class="rotate"><div><span>Employees/Systems</span></div></th><th class="rotate"><div><span>Eating Area</span></div></th><th class="rotate"><div><span>Merch/Displays</span></div><th class="rotate"><div><span>Fountain</span></div></th><th class="rotate"><div><span>Inventory</span></div></th><th class="rotate"><div><span>Backroom/Office</span></div></th><th class="rotate"><div><span>Restrooms</span></div></th>
 
 {{range .}}
+
                 <tr>
                     <td><a href= "/stores/{{.Store_id}}/reviews/{{.Day}}">{{.Day}}</a></td><td>{{.Outside | countStuff}}</td> <td>{{.Emp_sys | countStuff}}</td> <td>{{.Eating | countStuff}}</td> <td>{{.Merch | countStuff}}</td> <td>{{.Fountain | countStuff}}</td> <td>{{.Inventory | countStuff}}</td> <td>{{.Backroom | countStuff}}</td> <td>{{.Restrooms | countStuff}}</td>
                 </tr>

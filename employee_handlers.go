@@ -14,11 +14,15 @@ type Employee struct {
 	Role	string	`json: "role"`
 }
 
+
+
 type EmployeesStruct struct{
 	PageTitle string
 	Person Employee
 
 }
+
+
 func stringToInt(id string) int {
 	fval, err := strconv.ParseInt(id,0, 0)
 	if err != nil {
@@ -27,6 +31,27 @@ func stringToInt(id string) int {
 	return int(fval)
 }
 
+func adminHandler(w http.ResponseWriter, r *http.Request) {
+	if !isAdmin(w,r) {
+		fmt.Println("admin check failed")
+		w.WriteHeader(http.StatusForbidden)
+	} else {
+		user := getUser(w,r)
+		fmt.Println("got here")
+		if (user == "") {
+			log.Fatal("No user")
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		err := templates.ExecuteTemplate(w, "admin", user)
+		if err != nil {
+			fmt.Println(fmt.Errorf("Error %v", err))
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+
+	}
+}
 
 func getEmployeeHandler(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {

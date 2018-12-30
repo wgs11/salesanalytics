@@ -47,6 +47,7 @@ func newRouter() *mux.Router {
 	r.HandleFunc("/store/{location}", getPlaceHandler).Methods("GET")
 	r.HandleFunc("/stores/{location}/reviews", getReviews)
 	r.HandleFunc("/stores/{location}/reviews/{date}", getReview)
+	r.HandleFunc("/admin", adminHandler)
 
 
 	return r
